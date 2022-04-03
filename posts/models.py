@@ -18,7 +18,7 @@ class Post(models.Model):
     image = models.CharField(max_length=300)
     body = RichTextField(blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    viewers = models.ManyToManyField(User,related_name='post_viewers')
+    viewers = models.ManyToManyField(User,related_name='post_viewers',null=True,blank=True)
 
     class Meta:
         ordering = ['created_at']
